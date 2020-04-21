@@ -25,3 +25,4 @@ def interpolation(im_jpeg, down_factor):
     width = np.size(im_jpeg,1)
     im_interpolation = cv2.resize(im_jpeg, (int(height*down_factor), int(width*down_factor)), interpolation=cv2.INTER_CUBIC)
     return im_interpolation
+

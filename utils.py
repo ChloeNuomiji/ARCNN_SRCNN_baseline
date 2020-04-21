@@ -116,6 +116,12 @@ def calc_psnr(img1, img2):
      #rmse = torch.sqrt(torch.mean((img1 - img2) ** 2))
      #return 20 * torch.log10(1.0 / rmse)
 
+def PSNR(img1_path, img2_path, required_width, required_height):
+    img1_y = get_torch_y(img1_path, required_width, required_height)
+    img2_y = get_torch_y(img2_path, required_width, required_height)
+    psnr = calc_psnr(img1_y, img2_y)
+    return psnr
+
 # define a class: AverageMeter to calculate the mean value
 class AverageMeter(object):
     def __init__(self):
@@ -132,3 +138,5 @@ class AverageMeter(object):
         self.sum += val * n
         self.count += n
         self.avg = self.sum / self.count
+        
+        

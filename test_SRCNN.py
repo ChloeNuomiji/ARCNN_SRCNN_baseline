@@ -1,6 +1,5 @@
 """
-Author  : Xu fuyong
-Time    : created by 2019/7/17 17:41
+test_SRCNN
 
 """
 import argparse
@@ -13,14 +12,8 @@ import PIL.Image as pil_image
 from model import SRCNN
 from utils import convert_rgb_to_ycbcr, convert_ycbcr_to_rgb, calc_psnr
 
-if __name__ == '__main__': #这句话在什么时候放呢
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--weights-file', type=str, required=True)
-    parser.add_argument('--image-file', type=str, required=True)
-    parser.add_argument('--scale', type=int, default=3)
-    args = parser.parse_args()
-
 ##############
+# do not define the test_SRCNN as SRCNN, since it has been used in the model.py
 def SRCNN2(args, image_file): # CHANGE TO INPUT THE after-resize IMAGE FILE, SO IN THE OUTPUT3, NEED TO STORE THE denoise+resize image
     # load the SRCNN weights model
     #cudnn.benchmark = True
